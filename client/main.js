@@ -1,14 +1,12 @@
-import { DiscordSDK } from "@discord/embedded-app-sdk";
+import { DiscordSDK } from '@discord/embedded-app-sdk';
 
-import "./style.css";
-import rocketLogo from '/rocket.png';
+// Initialize the Discord SDK with your client ID
+const discordSdk = new DiscordSDK('1220807309068996728');
 
-// Instantiate the SDK
-const discordSdk = new DiscordSDK(import.meta.env.VITE_DISCORD_CLIENT_ID);
-
+// Wait for the SDK to be ready
 await discordSdk.ready();
-// Once the sdk has established the connection with the discord client, external
-// links can be launched
+
+// Once the SDK has established the connection with the Discord client, external links can be launched
 discordSdk.commands.openExternalLink({
   url: 'https://google.com',
 });
